@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <!-- Required meta tags-->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <title>eGFR calculator</title>
+    <!-- Path to Framework7 iOS CSS theme styles-->
+    <link rel="stylesheet" href="f7/framework7.ios.min.css">
+    <!-- Path to Framework7 iOS related color styles -->
+    <link rel="stylesheet" href="f7/framework7.ios.colors.min.css">
+    <!-- Path to your custom app styles
+    <link rel="stylesheet" href="path/to/my-app.css">-->
+</head>
+<body>
+<!-- Status bar overlay for full screen mode (PhoneGap) -->
+<div class="statusbar-overlay"></div>
+<!-- Views -->
+<div class="views">
+    <!-- Your main view, should have "view-main" class -->
+    <div class="view view-main">
+        <!-- Top Navbar-->
+        <div class="navbar">
+            <div class="navbar-inner">
+                <!-- We need cool sliding animation on title element, so we have additional "sliding" class -->
+                <div class="center sliding">Adult eGFR calculator</div>
+            </div>
+        </div>
+        <!-- Pages container, because we use fixed-through navbar and toolbar, it has additional appropriate classes-->
+        <div class="pages navbar-through toolbar-through">
+            <!-- Page, "data-page" contains page name -->
+            <div data-page="index" class="page">
+                <!-- Scrollable page content -->
+                <div class="page-content">
+                    <div class="list-block">
+                        <ul>
+                            <!-- Text inputs -->
+                            <li>
+                                <div class="item-content">
+                                    <div class="item-inner">
+                                        <div class="item-title label">Serum Creatinine</div>
+                                        <div class="item-input">
+                                            <input type="number" id = "SCr" pattern="[0-9\.]*" placeholder="mg/dl">
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="item-content">
+                                     <div class="item-inner">
+                                        <div class="item-title label">Age</div>
+                                        <div class="item-input">
+                                            <input type="number" id="Age" pattern="[0-9]*">
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+
+                            <!-- Select -->
+                            <li>
+                                <div class="item-content">
+                                    <div class="item-inner">
+                                        <div class="item-title label">Gender</div>
+                                        <div class="item-input">
+                                            <select id="Gender">
+                                                <option value="0">Male</option>
+                                                <option value="1">Female</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="item-content">
+                                    <div class="item-inner">
+                                        <div class="item-title label">Race</div>
+                                        <div class="item-input">
+                                            <select id="Race">
+                                                <option value="0">Other</option>
+                                                <option value="1">Black</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="list-block">
+                        <div class="content-block-title">Results</div>
+                        <ul>
+                            <li class="item-content">
+                                <div class="item-inner">
+                                    <div class="item-title label">CKD-EPI(2009)</div>
+                                    <div class="item-input" id = "eGFRCr">
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="item-content ">
+
+                                <div class="item-inner">
+                                    <div class="item-title label">MDRD</div>
+                                    <div class="item-input" id = "MDRD">
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+
+<!-- Path to Framework7 Library JS-->
+<script type="text/javascript" src="f7/framework7.min.js"></script>
+<!-- Path to your app js-->
+<script type="text/javascript" src="js/my-app.js"></script>
+
+</body>
+</html>
